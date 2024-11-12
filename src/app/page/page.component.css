@@ -1,0 +1,73 @@
+/* modal */
+.modal {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed; /* Định vị cố định */
+  z-index: 1; /* Đặt độ ưu tiên */
+  left: 0;
+  top: 0;
+  width: 100%; /* Toàn bộ chiều rộng */
+  height: 100%; /* Toàn bộ chiều cao */
+  overflow: auto; /* Kích hoạt cuộn nếu cần */
+  background-color: rgba(0, 0, 0, 0.4); /* Độ trong suốt */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Đặt giữa màn hình */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Chiều rộng của modal */
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%; /* Chiều rộng modal nhỏ hơn trên điện thoại */
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;  /* Đảm bảo các phần tử không bị tràn */
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  flex: 1 1 100%; /* Đảm bảo label chiếm hết chiều rộng của hàng */
+}
+
+.form-row input {
+  flex: 2 1 60%; /* Input chiếm phần còn lại */
+  margin-left: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox {
+  margin: 10px 0;
+}

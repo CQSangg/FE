@@ -1,0 +1,111 @@
+<main id="app">
+  <div class="container mt-4">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Trang chủ</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Student
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Search and Action Buttons -->
+    <div class="d-flex justify-content-between mb-3">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Tìm kiếm"
+        aria-label="Search"
+        style="width: 250px;"
+      />
+      <div>
+        <button class="btn btn-primary me-2">
+          <i class="bi bi-file-earmark-spreadsheet"></i> Xuất Excel
+        </button>
+        <!-- Nút Thêm mới -->
+        <button class="btn btn-success" onclick="showModal()">
+          <i class="bi bi-plus-circle"></i> Thêm mới
+        </button>
+      </div>
+    </div>
+
+    <!-- Table Content -->
+    <table class="table table-bordered">
+      <thead class="table-light">
+      <tr>
+        <th colspan="12" class="text-start font-weight-bold">
+          Danh sách học sinh
+        </th>
+      </tr>
+      <tr>
+        <th>STT</th>
+        <th>StudentCode</th>
+        <th>StudentName</th>
+        <th>Gender</th>
+        <th>Numberphone</th>
+        <th>Address</th>
+        <th>BirthDate</th>
+        <th>CreateDay</th>
+        <th>UpdateDate</th>
+        <th>IsDelete</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>PC05706</td>
+        <td>Quang Sang</td>
+        <td>Nam</td>
+        <td>0123456</td>
+        <td>Cần Thơ</td>
+        <td>01-01-2004</td>
+        <td>12-11-2024</td>
+        <td>12-11-2024</td>
+        <td>1</td>
+        <td>sang.edu.vn</td>
+        <td>
+          <i class="bi bi-pencil-square me-2" style="cursor: pointer;"></i>
+          <i class="bi bi-trash-fill" style="cursor: pointer; color: red;"></i>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+    <!-- Modal Thêm mới loại nguyên vật liệu -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Thông tin loại nguyên vật liệu</h2>
+        <div class="form-row">
+          <label for="materialCode">Mã loại:</label>
+          <input type="text" id="materialCode" placeholder="Nhập mã loại">
+        </div>
+        <div class="form-row">
+          <label for="materialName">Loại nguyên vật liệu:</label>
+          <input type="text" id="materialName" placeholder="Nhập loại nguyên vật liệu">
+        </div>
+        <div class="form-row">
+          <label for="description">Mô tả:</label>
+          <input type="text" id="description" placeholder="Nhập mô tả">
+        </div>
+        <div class="form-row">
+          <label for="status">Trạng thái:</label>
+          <select id="status">
+            <option value="active">Đang sử dụng</option>
+            <option value="inactive">Không sử dụng</option>
+          </select>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-success" onclick="addMaterial()">Lưu thay đổi</button>
+          <button class="btn btn-danger" onclick="closeModal()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
